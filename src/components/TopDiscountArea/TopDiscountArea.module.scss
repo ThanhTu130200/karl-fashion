@@ -1,0 +1,45 @@
+.topDiscountArea {
+    .singleDiscount {
+        text-align: center;
+        color: #fff;
+        background-color: #b8b8b8;
+        padding: 40px 0;
+        h2,
+        p {
+            margin: 0;
+        }
+        h2 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        p {
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
+    .singleDiscount:nth-child(2) {
+        background-color: var(--primary-color);
+        p {
+            cursor: text;
+        }
+    }
+    .singleDiscount:last-child {
+        background-color: #3a3a3a;
+        p {
+            cursor: text;
+        }
+    }
+}    
+
+// Responsive
+
+// Tablet & PC
+@media (min-width: 740px) {
+
+}
+
+// PC
+@media (min-width: 1024px) {
+
+}

@@ -1,0 +1,130 @@
+$suvHeaderLineHeight: 35px;
+
+.suvHeaderContainer {
+    .suvHeaderItem {
+    }
+    padding-top: 30px;
+    .socials {
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.4rem;
+        .socialsLink {
+            text-decoration: none;
+            line-height: $suvHeaderLineHeight;
+            color: #2a2a2a;
+        }
+    }
+    .suvHeaderMenuIcon {
+        display: flex;
+        justify-content: center;
+        .menuIcon {
+            display: block;
+            width: 100%;
+            height: $suvHeaderLineHeight;
+            line-height: $suvHeaderLineHeight;
+            font-size: 2rem;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+    }
+    .mainMenu{
+        display: none;
+    }
+    .phoneNumber {
+        text-align: center;
+        .phoneNumberLink {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-color);
+            line-height: $suvHeaderLineHeight;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .phoneNumberLink:hover {
+            background-color: #3a3a3a;
+            transition: .5s background-color;
+        }
+    }
+}
+
+// Responsive
+
+// Tablet & PC
+@media (min-width: 740px) {
+    .suvHeader {
+        .suvHeaderContainer {
+            height: 150px;
+            .socials {
+                padding-right: 50px;
+                display: flex;
+            }
+            .mainMenu{
+                display: none;
+            }
+            .suvHeaderMenuIcon {
+                .menuIcon {
+                    display: block;
+                    width: 80px;
+                }
+            }
+        }
+    }
+}
+
+// PC
+@media (min-width: 1024px) {
+    .suvHeader {
+        .suvHeaderContainer {
+            .socials {
+                padding-right: 14px;
+            }
+            .mainMenu {
+                display: flex;
+                justify-content: space-between;
+                font-size: 1.4rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: $suvHeaderLineHeight;
+                .mainMenuLink {
+                    height: 35px;
+                    position: relative;
+                    cursor: pointer;
+                    .showMoreIcon {
+                        font-size: 1.2rem;
+                        margin-left: 4px;
+                    }
+                    .pagesMenu  {
+                        visibility: hidden;
+                        position: absolute;
+                        top: 40px;
+                        left: -25px;
+                        margin: 0;
+                        padding: 8px 0;
+                        min-width: 175px;
+                        text-decoration: none;
+                        list-style: none;
+                        background-color: #fff;
+                        border-radius: 3px;
+                        box-shadow:0 0 25px rgba($color: #000000, $alpha: 0.2);
+                        
+                        z-index: 10;
+                        .pagesMenuItem {
+                            font-size: 1.4rem;
+                            line-height: 1.6rem;
+                            padding: 8px 25px;
+                        }
+                    }
+                }
+                .mainMenuPagesLink:hover .pagesMenu {
+                    visibility: visible;
+                }
+            }
+            .suvHeaderMenuIcon {
+                display: none;
+            }
+        }
+    }
+}

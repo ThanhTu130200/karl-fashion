@@ -1,5 +1,26 @@
 * {
   box-sizing: inherit;
+  --primary-color: rgb(255, 8, 78);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 5px;
+}
+
+.App {
+  overflow: hidden;
 }
 
 html {
@@ -7,4 +28,16 @@ html {
   line-height: 1.6rem;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.visible {
+  visibility: visible !important;
 }

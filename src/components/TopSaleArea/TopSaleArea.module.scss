@@ -1,0 +1,101 @@
+.topSaleAreaContainer {
+  .topSaleArea {
+    .topSaleAreaItem {
+      position: relative;
+      display: flex;
+      background: no-repeat center / cover;
+      justify-content: center;
+      cursor: pointer;
+      .topSaleAreaItemContent {
+        padding: 100px;
+        min-height: 70vh;
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: background-color .4s linear;
+        h6,
+        h1,
+        button {
+          padding: 0;
+          margin: 0;
+          color: #fff;
+          text-transform: uppercase;
+        }
+        h6 {
+          font-size: 1.4rem;
+          cursor: text;
+        }
+        h1 {
+          line-height: 6.4rem;
+          margin: 20px 0 20px -5px;
+          font-size: 6.4rem;
+          cursor: text;
+        }
+        button {
+          max-width: 200px;
+          font-weight: 700;
+          font-size: 1.4rem;
+          background-color: transparent;
+          min-width: 182px;
+          box-sizing: border-box;
+          padding: 0 30px;
+          height: 55px;
+          color: #fff;
+          border: 3px solid #fff;
+          border-radius: 2px;
+          cursor: pointer;
+          transition: background-color .4s linear;
+        }
+        button:hover {
+            background-color: #3a3a3a;
+            border-color: #3a3a3a;
+        }
+      }
+    }
+    .topSaleAreaItem:hover .topSaleAreaItemContent {
+      background-color: rgba(255, 8, 78, 0.7);
+    }
+  }
+}
+
+// Responsive
+
+// Tablet
+@media (min-width: 740px) and (max-width: 1024px) {
+  .topSaleAreaContainer {
+    .topSaleArea {
+      .topSaleAreaItem {
+        .topSaleAreaItemContent {
+          padding: 40px;
+          h1 {
+            line-height: 5rem;
+            font-size: 5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 739px) {
+  .topSaleAreaContainer {
+    .topSaleArea {
+      .topSaleAreaItem {
+          max-height: 60vh;
+        .topSaleAreaItemContent {
+          padding: 54px;
+          min-height: 60vh;
+          h1 {
+            margin-left: -2px;
+            line-height: 4rem;
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,300 @@
+$headerHeight: 150px;
+$closeWidth: 50px;
+.headerContainer {
+    height: $headerHeight;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.headerLogo {
+    display: flex;
+    justify-content: start;
+}
+
+.headerBagAndCategoryIcon {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    height: 100%;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #2e2e2e;
+    .yourBagLabelAndIcon {
+        cursor: pointer;
+        .headerBagIcon {
+            font-size: 2rem;
+            padding-right: 4px;
+        }
+        .yourBagLabel {
+        }
+    }
+    .yourBag {
+        visibility: hidden;
+        position: absolute;
+        top: 105px;
+        right: 12px;
+        background-color: #fff;
+        width: 280px;
+        box-shadow: 0 0 25px rgb(0 0 0 / 20%);
+        border-radius: 3px;
+        z-index: 100;
+        .listsItem {
+            list-style: none;
+            padding: 0;
+            .item {
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #ebebeb;
+                .thumbnail {
+                    width: auto;
+                    height: 40px;
+                    margin: 12px;
+                }
+                .details {
+                    .productName {
+                        margin: 0 0 12px 0;
+                    }
+                    .amountAndPrice {
+                        display: flex;
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .yourBagFooter {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 12px;
+            .cartAndCheckout {
+                display: flex;
+                font-weight: 450;
+                align-items: center;
+                .cart,
+                .checkout {
+                    padding: 6px 8px;
+                    margin-right: 4px;
+                    color: #fff;
+                }
+                .cart {
+                    background-color: #3a3a3a;
+                }
+                .checkout {
+                    background-color: var(--primary-color);
+                }
+            }
+        }
+    }
+    .yourBagLabelAndIcon:hover .yourBag {
+        visibility: visible;
+    }
+    .headerCategory {
+        .headerCategoryIcon {
+            line-height: $headerHeight;
+            font-size: 2.4rem;
+            background-color: #3a3a3a;
+            color: #fff;
+            padding: 17px;
+            border-radius: 50%;
+            margin-left: 4px;
+            cursor: pointer;
+        }
+    }
+    .headerCategoryIcon:hover {
+        background-color: var(--primary-color);
+        transition: .5s background-color;
+    }
+    .categoryCheckbox:checked ~ .headerCategoryListsWrap {
+        transform: translateX(0)
+    }
+    .categoryCheckbox:checked ~ .headerCategoryOverlay {
+        display: block;
+    }
+    .headerCategoryOverlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 11;
+        animation: fadeIn .3s linear forwards;
+    }
+    .headerCategoryListsWrap {
+        position: fixed;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        width: 300px;
+        max-width: 100%;
+        background-color: #fff;
+        text-align: left;
+        padding-left: 20px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        direction: rtl;
+        transition: .5s transform;
+        z-index: 12;
+        .headerCategoryClose {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: calc($closeWidth + 10px);
+            height: $closeWidth;
+            line-height: $closeWidth;
+            font-size: 1.8rem;
+            text-align: center;
+            color: #fff;
+            background-color: #3a3a3a;
+            transition: .5s background-color;
+            cursor: pointer;
+            .headerCategoryCloseIcon {
+            }
+        }
+        .headerCategoryClose:hover {
+            background-color: var(--primary-color);
+        }
+        .headerCategoryHeader {
+            margin-top: $closeWidth;
+            font-size: 1.6rem;
+            padding: 30px 0;
+        }
+        .headerCategoryLists {
+            font-weight: 400;
+            list-style: none;
+            padding: 0;
+            line-height: 45px;
+            .headerCategoryItem {
+                display: block;
+                position: relative;
+                margin-left: 20px;
+                cursor: pointer;
+                .headerCategoryItemName {
+                    display: block;
+                    cursor: pointer;
+                }
+                .arrowDown {
+                    position: absolute;
+                    right: 18px;
+                    line-height: 4rem;
+                }
+                .headerCategoryItemChildren {
+                    margin: 0 0 10px 10px;
+                    display: none;
+                    opacity: 0;
+                    list-style: none;
+                    padding: 0;
+                    animation: turnInFromLeft .3s .1s 1 linear forwards;
+                    cursor: default;
+                    .headerCategoryItemChild {
+                        position: relative;
+                        cursor: pointer;
+                    }
+                    .headerCategoryItemChild::before {
+                        width: 8px;
+                        height: 8px;
+                        border: 1px solid #000;
+                        background-color: #fff;
+                        border-radius: 2px;
+                        display: inline-block;
+                        margin: 0 -20px;
+                        content: '';
+                        position: absolute;
+                        top: 18px;
+                        left: 0;
+                    }
+                }
+            }
+            .headerCategoryItem::before {
+                width: 8px;
+                height: 8px;
+                border: 1px solid #000;
+                background-color: #fff;
+                border-radius: 2px;
+                display: inline-block;
+                margin: 0 -20px;
+                content: '';
+                position: absolute;
+                top: 18px;
+                left: 0;
+            }
+            .active.headerCategoryItem::before {
+                border-color: var(--primary-color);
+                background-color: var(--primary-color);
+            }
+        }
+    }
+}
+
+// Animations
+@keyframes turnInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// Tablet
+@media (min-width: 740px) {
+    .headerContainer {
+        .headerLogo {
+            display: flex;
+            justify-content: start;
+        }
+        .headerBagAndCategoryIcon {
+            .headerBagIcon{
+                line-height: $headerHeight;
+            }
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+/* PC */
+@media (min-width: 1024px) {
+    .headerContainer {
+        .headerLogo {
+            display: flex;
+            justify-content: center;
+        }
+        .headerBagAndCategoryIcon {
+            .yourBagLabelAndIcon {
+                height: 0px;
+            }
+        }
+    }
+}
+
+// Mobile
+@media (max-width: 739px) {
+    .headerContainer {
+        padding: 0 8px;
+    }
+    .headerBagAndCategoryIcon {
+            display: flex;
+        .yourBagLabelAndIcon {
+            margin: auto 0;
+        }
+    }
+}
