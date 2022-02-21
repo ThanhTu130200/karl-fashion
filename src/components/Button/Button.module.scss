@@ -1,0 +1,14 @@
+.button {
+  width: 200px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  background-color: transparent;
+  box-sizing: border-box;
+  height: 55px;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.4s linear;
+}

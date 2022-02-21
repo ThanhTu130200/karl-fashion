@@ -4,7 +4,7 @@ $imgMargin: 16px;
 $modalCartAreaHeight: 35px;
 
 .addToCartModalContainer {
-  display: flex;
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -12,12 +12,13 @@ $modalCartAreaHeight: 35px;
   left: 0;
   .overlay {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 12;
+    animation: fadeIn .3s linear forwards;
   }
   .addToCartModal {
     width: $modalWidth;
@@ -26,6 +27,7 @@ $modalCartAreaHeight: 35px;
     margin: auto;
     background-color: #fff;
     z-index: 13;
+    animation: modalAnimation .3s linear forwards;
     .addToCartImgWrap {
       height: $modalHeight;
       .addToCartImg {
@@ -85,7 +87,7 @@ $modalCartAreaHeight: 35px;
         line-height: 3.5rem;
         .quantity {
           input {
-            padding: 4px;
+            text-align: center;
             height: $modalCartAreaHeight;
             width: 40px;
             border: 1px solid #f6f6f6;
@@ -119,6 +121,7 @@ $modalCartAreaHeight: 35px;
           background-color: #e91e63;
           color: #fff;
           padding-top: 2px;
+          cursor: pointer;
         }
       }
       .shareArea {
@@ -139,6 +142,22 @@ $modalCartAreaHeight: 35px;
         }
       }
     }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from { opacity: 0 }
+}
+
+@keyframes modalAnimation {
+  from { 
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

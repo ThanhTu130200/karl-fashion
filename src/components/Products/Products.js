@@ -1,18 +1,17 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import styles from './Products.module.scss'
 import products from './FakeAPIProducts'
 import AddToCartModal from '../AddToCartModal/AddToCartModal'
 
 function Products({ active }) {
-
-    let itemToCart = null
+    
     const maxItems = 6
     let countItems = 0
     const items = document.querySelectorAll('[class*="Products_product__"]')
 
     useEffect(() => {
         items.forEach(item => {
-            const itemAnimate = item.animate([
+            item.animate([
                 // keyframes
                 {   
                     transform: 'translateY(600px)',
@@ -32,22 +31,34 @@ function Products({ active }) {
         })
     })
 
+    const handleClickImg = (e, id) => {
+        const modal = document.querySelector(`[class*=modal-${id}]`)
+        modal.classList.add('d-flex')
+        // Disable hover CSS animations
+        e.target.style.transform = 'none'
+        e.target.style.transition = 'none'
+        e.target.style.filter = 'none'
+    }
+
     const renderItem = item => {
         if (countItems >= maxItems) {
             return null
         } else {countItems++}
         return (
         <div key={item.id} className={`${styles.product} col l-4 m-4 c-12`}>
-            <AddToCartModal />
             <div className={`${styles.productItem}`}>
+                <AddToCartModal item = {item} />
                 <div
                     className={`${styles.productItemImg}`}
                     style={{ backgroundImage: `url(${item.imgPath})` }}
-                    onClick={() => {itemToCart = item}}
+                    onClick={(e) => handleClickImg(e, item.id)}
                 >
                 </div>
-                <h3 className={styles.productItemPrice}>{`$${item.price}`}</h3>
-                <p className={styles.productItemDetail}>{item.name}</p>
+                <div className={styles.productItemPriceArea}>
+                    <h3 className={styles.productItemPrice}>{`$${item.price}`}</h3>
+                    <h4 className={styles.productItemOldPrice}>{`$${item.oldPrice}`}</h4>
+                </div>
+                <p className={styles.productItemName}>{item.name}</p>
                 <a href="#" className={styles.productItemAddToCart}>Add to cart</a>
             </div>
         </div>

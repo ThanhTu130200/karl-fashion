@@ -15,15 +15,31 @@
                 filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2));
                 transition: .2s all linear;
             }
-            .productItemPrice {
-                font-size: 2.4rem;
-                color: #9f9f9f;
-                font-weight: normal;
+            .productItemPriceArea {
+                display: flex;
                 margin: 24px 0 14px;
+                align-items: flex-end;
+                .productItemPrice {
+                    margin: 0;
+                    font-size: 2.4rem;
+                    line-height: 2.4rem;
+                    color: #3a3a3a;
+                    font-weight: 700;
+                }
+                .productItemOldPrice {
+                    margin: 0;
+                    font-size: 1.6rem;
+                    font-weight: 1.6rem;
+                    color: #9f9f9f;
+                    text-decoration: line-through;
+                    padding-bottom: 2px;
+                    padding-left: 10px;
+                }
             }
-            .productItemDetail {
+            .productItemName {
                 margin: 0;
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+                font-weight: 600;
                 color: #3a3a3a;
             }
             .productItemAddToCart {

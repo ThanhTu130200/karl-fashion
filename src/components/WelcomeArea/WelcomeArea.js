@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import data from './FakeAPIWelcomeArea'
 import styles from './WelcomeArea.module.scss'
+import Button from '../Button/Button'
 
 function WelcomeArea () {
 
@@ -51,7 +52,7 @@ function WelcomeArea () {
                     >
                         <h1 className={`${styles.offer}`}>{item.offer}</h1>
                         <h1 className={`${styles.title}`}>{item.title}</h1>
-                        <button className={`${styles.action}`}>{item.action}</button>
+                        <Button className={`${styles.action}`}>{item.action}</Button>
                     </div>
                 ))}
             </div>

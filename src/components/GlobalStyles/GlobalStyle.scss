@@ -1,5 +1,6 @@
 * {
   box-sizing: inherit;
+  color: #3a3a3a;
   --primary-color: rgb(255, 8, 78);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -40,4 +41,23 @@ html {
 
 .visible {
   visibility: visible !important;
+}
+
+// Hide Arrows From Input Number
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+// Custom slider-active dot
+.slick-dots li.slick-active button:before {
+  color: var(--primary-color);
+      text-shadow: none;
 }
