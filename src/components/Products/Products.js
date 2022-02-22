@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import styles from './Products.module.scss'
-import products from './FakeAPIProducts'
+import products from '../FakeAPI/FakeAPIProducts'
 import AddToCartModal from '../AddToCartModal/AddToCartModal'
 
 function Products({ active }) {

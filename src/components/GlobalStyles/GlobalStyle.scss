@@ -1,6 +1,6 @@
 * {
   box-sizing: inherit;
-  color: #3a3a3a;
+  font-family: 'Open Sans', sans-serif;
   --primary-color: rgb(255, 8, 78);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -25,9 +25,9 @@
 }
 
 html {
+  color: #3a3a3a;
   font-size: 62.5%;
   line-height: 1.6rem;
-  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
 

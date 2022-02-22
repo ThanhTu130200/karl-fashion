@@ -1,20 +1,11 @@
-import { useState } from 'react'
 import styles from './Header.module.scss'
-import categories from './FakeAPIHeader'
+import Categories from '../Categories/Categories'
+import categoriesStyles from '../Categories/Categories.module.scss'
 
 function Header() {
 
-    const [activeItems, setActiveItems] = useState([])
-
-    const handleActive = (id) => {
-        if (activeItems.includes(id)) {
-            setActiveItems(activeItems.filter(activeItem => activeItem !== id))
-        } else {
-            setActiveItems([
-                ...activeItems,
-                id
-            ])
-        }
+    const handleShowCategories = () => {
+        document.querySelector(`.${categoriesStyles.headerCategoryListsWrap}`).classList.add(categoriesStyles.active)
     }
 
     return (
@@ -50,48 +41,12 @@ function Header() {
                             </div>
                         </div>
                     </span>
-                    <label htmlFor="categoryCheckbox" className={`${styles.headerCategory}`}>
+                    <div className={`${styles.headerCategory}`} onClick={handleShowCategories}>
                         <i className={`${styles.headerCategoryIcon} ti-menu`}></i>
-                    </label>
-                    <input type="checkbox" id="categoryCheckbox" className={styles.categoryCheckbox} hidden/>
-                    <label htmlFor="categoryCheckbox" className={styles.headerCategoryOverlay}></label>
-                    <nav className={styles.headerCategoryListsWrap}>
-                        <label htmlFor="categoryCheckbox" className={styles.headerCategoryClose}>
-                            <i className={`${styles.headerCategoryCloseIcon} ti-close`} />
-                        </label>
-                        <h2 className={styles.headerCategoryHeader}>Categories</h2>
-                        <div className={styles.headerCategoryLists}>
-                            {categories.map(category => (
-                                <div
-                                    key={category.id}
-                                    className={`${styles.headerCategoryItem} item-${category.id} ${activeItems.includes(category.id) && styles.active
-                                        }`}
-                                >
-                                    <label
-                                        className={styles.headerCategoryItemName}
-                                        onClick={() => handleActive(category.id)}
-                                    >
-                                        {category.name}
-                                        <i className={`${styles.arrowDown} ti-angle-down`}></i>
-                                    </label>
-                                    <ul className={`${styles.headerCategoryItemChildren}  ${
-                                            activeItems.includes(category.id) && 'd-block'
-                                        }`}>
-                                        {category.children.map((child, index) => (
-                                            <li
-                                                key={index}
-                                                className={`${styles.headerCategoryItemChild}`}
-                                            >
-                                                {child}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-                    </nav>
+                    </div>
                 </div>
             </div>
+            <Categories />
         </div>
     )
 }

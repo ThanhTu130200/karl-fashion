@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './SuvHeader.module.scss'
 
 function SuvHeader() {
@@ -21,18 +22,18 @@ function SuvHeader() {
                 <div className={`${styles.suvHeaderMenuIcon} ${styles.suvHeaderItem} col m-4 c-12`}>
                     <i className={`${styles.menuIcon} ti-menu`}></i>
                 </div>
-                <div className={`${styles.mainMenu} col l-6 l-o-1`}>
+                <div className={`${styles.mainMenu} col l-6 l-o-1 m-0 c-0`}>
                     {/* Add class `hot` to element Hot */}
                     <div className={`${styles.mainMenuLink}`}>Home</div>
                     <div className={`${styles.mainMenuLink} ${styles.mainMenuPagesLink}`}>
                         Pages
                         <i className={`${styles.showMoreIcon} ti-angle-down`}></i>
                         <ul className={styles.pagesMenu}>
-                            <li className={styles.pagesMenuItem}>Home</li>
-                            <li className={styles.pagesMenuItem}>Shop</li>
-                            <li className={styles.pagesMenuItem}>Product Details</li>
-                            <li className={styles.pagesMenuItem}>Cart</li>
-                            <li className={styles.pagesMenuItem}>Checkout</li>
+                            <Link to="/" className={styles.pagesMenuItem}>Home</Link>
+                            <Link to="/shop-page" className={styles.pagesMenuItem}>Shop</Link>
+                            <Link to='/product-details-page' className={styles.pagesMenuItem}>Product Details</Link>
+                            <Link to="/cart-page" className={styles.pagesMenuItem}>Cart</Link>
+                            <Link to="/checkout-page" className={styles.pagesMenuItem}>Checkout</Link>
                         </ul>
                     </div>
                     <div className={`${styles.mainMenuLink}`}>Dresses</div>

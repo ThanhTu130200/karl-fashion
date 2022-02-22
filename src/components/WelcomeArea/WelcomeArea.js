@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import data from './FakeAPIWelcomeArea'
+import data from '../FakeAPI/FakeAPIWelcomeArea'
 import styles from './WelcomeArea.module.scss'
 import Button from '../Button/Button'
 

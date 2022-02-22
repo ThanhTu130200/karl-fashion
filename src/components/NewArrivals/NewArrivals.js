@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 
 import styles from './NewArrivals.module.scss'
-import products from '../Products/FakeAPIProducts'
+import products from '../FakeAPI/FakeAPIProducts'
 import Products from '../Products/Products'
 
 function NewArrivals() {
