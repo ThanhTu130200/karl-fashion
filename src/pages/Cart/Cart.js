@@ -42,7 +42,7 @@ function Cart() {
 				))}
 				<div className={styles.cartFooter + " row"}>
 					<div className={styles.cartFooterContinue + " col l-7 m-6 c-12"}>
-						<Button isLink>Continue shopping</Button>
+						<Button isBack>Continue shopping</Button>
 					</div>
 					<div className={styles.cartFooterClearAndUp + " col l-5 m-6 c-12"}>
 						<Button>Clear cart</Button>
