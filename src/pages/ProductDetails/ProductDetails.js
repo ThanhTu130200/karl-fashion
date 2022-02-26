@@ -44,7 +44,8 @@ function ProductDetails({ item = products[0].items[0] }) {
 			},
 			1000
 		)
-	})
+		// return $("html, body").stop()
+	}, [])
 
 	const handleClick = (size) => {
 		size === active ? setActive(null) : setActive(size)
