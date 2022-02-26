@@ -1,0 +1,21 @@
+$height: 35px;
+
+.quantity {
+	input {
+		text-align: center;
+		height: $height;
+		width: 40px;
+		border: 1px solid #f6f6f6;
+	}
+	button {
+		height: $height;
+		min-width: 25px;
+		border: 1px solid #f6f6f6;
+		background-color: transparent;
+		color: #888;
+		font-size: 1.8rem;
+		line-height: 1.8rem;
+		font-weight: 600;
+		cursor: pointer;
+	}
+}

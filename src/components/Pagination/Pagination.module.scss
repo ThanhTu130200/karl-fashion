@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: center;
+    .page {
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding: 15px;
+        color: #9f9f9f;
+        border: 3px solid #9f9f9f;
+        margin: 0 8px;
+        cursor: pointer;
+        transition: all 0.4s linear;
+    }
+    .page.active {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+    .page:hover {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+}

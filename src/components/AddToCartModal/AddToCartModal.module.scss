@@ -4,185 +4,192 @@ $imgMargin: 16px;
 $modalCartAreaHeight: 35px;
 
 .addToCartModalContainer {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  .overlay {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 12;
-    animation: fadeIn .3s linear forwards;
-  }
-  .addToCartModal {
-    width: $modalWidth;
-    height: $modalHeight;
-    border-radius: 3px;
-    margin: auto;
-    background-color: #fff;
-    z-index: 13;
-    animation: modalAnimation .3s linear forwards;
-    .addToCartImgWrap {
-      height: $modalHeight;
-      .addToCartImg {
-        margin: $imgMargin 0 $imgMargin 32px;
-        height: calc(100% - $imgMargin * 2);
-        background: no-repeat top center/ cover;
-      }
-    }
-    .addToCartContent {
-      padding-right: 44px;
-      .addToCartDescription {
-        padding: 30px 0;
-        h1 {
-          font-size: 2.4rem;
-        }
-        .addToCartRating {
-          margin-bottom: 24px;
-          font-size: 1.8rem;
-          color: #ff9800;
-        }
-        .addToCartContentPrice {
-          display: flex;
-          margin: 10px 0;
-          align-items: flex-end;
-          h2 {
-            margin: 0;
-            margin-right: 5px;
-            font-size: 2rem;
-          }
-          h3 {
-            margin: 0;
-            font-size: 1.4rem;
-            line-height: 1.4rem;
-            color: #888;
-            text-decoration: line-through;
-          }
-        }
-        p {
-          font-size: 1.4rem;
-          line-height: 2rem;
-          margin: 14px 0 24px;
-          height: 8.4rem;
-          overflow: hidden; // ẩn các nội dung khi kích thước lớn hơn chiều rộng khối bên ngoài
-          text-overflow: ellipsis; //thêm 3 dấu chấm ở cuối
-          -webkit-line-clamp: 4; // số dòng muốn hiển thị
-          -webkit-box-orient: vertical;
-          display: -webkit-box;
-        }
-        a {
-          font-size: 1.4rem;
-          color: #19b5fe;
-        }
-      }
-      .cart {
-        display: flex;
-        height: $modalCartAreaHeight;
-        line-height: 3.5rem;
-        .quantity {
-          input {
-            text-align: center;
-            height: $modalCartAreaHeight;
-            width: 40px;
-            border: 1px solid #f6f6f6;
-          }
-          button {
-            height: 100%;
-            min-width: 25px;
-            border: 1px solid #f6f6f6;
-            background-color: transparent;
-            color: #888;
-            font-size: 1.8rem;
-            line-height: 1.8rem;
-            font-weight: 600;
-            cursor: pointer;
-          }
-        }
-        a {
-          text-align: center;
-          width: 120px;
-          height: $modalCartAreaHeight;
-          background-color: var(--primary-color);
-          color: #fff;
-          margin: 0 14px;
-          text-decoration: none;
-          font-size: 1.4rem;
-        }
-        .favorite {
-          text-align: center;
-          font-size: 2.5rem;
-          width: $modalCartAreaHeight;
-          background-color: #e91e63;
-          color: #fff;
-          padding-top: 2px;
-          cursor: pointer;
-        }
-      }
-      .shareArea {
-        h4 {
-          font-size: 1.4rem;
-          font-weight: 600;
-          opacity: .9;
-        }
-        .socials {
-          margin-left: -4px;
-          .socialIcon {
-            font-size: 1.4rem;
-            color: #888;
-          }
-          .socialIcon + .socialIcon {
-            margin-left: 10px;
-          }
-        }
-      }
-    }
-  }
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	.overlay {
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.5);
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 12;
+		animation: fadeIn 0.3s linear forwards;
+	}
+	.addToCartModal {
+		width: $modalWidth;
+		height: $modalHeight;
+		border-radius: 3px;
+		margin: auto;
+		background-color: #fff;
+		z-index: 13;
+		animation: modalAnimation 0.3s linear forwards;
+		.addToCartImgWrap {
+			height: $modalHeight;
+			.addToCartImg {
+				position: relative;
+				margin: $imgMargin 0 $imgMargin 32px;
+				height: calc(100% - $imgMargin * 2);
+				background: no-repeat top center/ cover;
+				.closeMobile {
+					position: absolute;
+					top: 0;
+					right: 0;
+					font-size: 2rem;
+					background-color: #3a3a3a;
+					color: #fff;
+					padding: 8px;
+					opacity: 0.8;
+				}
+			}
+		}
+		.addToCartContent {
+			padding-right: 44px;
+			.addToCartDescription {
+				position: relative;
+				padding: 30px 0;
+				h1 {
+					font-size: 2.4rem;
+				}
+				.close {
+					position: absolute;
+					top: 16px;
+					right: 0;
+					font-size: 1.6rem;
+					opacity: 0.6;
+					cursor: pointer;
+				}
+				.close:hover {
+					opacity: 1;
+				}
+				.addToCartRating {
+					margin-bottom: 24px;
+					font-size: 1.8rem;
+					color: #ff9800;
+				}
+				.addToCartContentPrice {
+					display: flex;
+					margin: 10px 0;
+					align-items: flex-end;
+					h2 {
+						margin: 0;
+						margin-right: 5px;
+						font-size: 2rem;
+					}
+					h3 {
+						margin: 0;
+						font-size: 1.4rem;
+						line-height: 1.4rem;
+						color: #888;
+						text-decoration: line-through;
+					}
+				}
+				p {
+					font-size: 1.4rem;
+					line-height: 2rem;
+					margin: 14px 0 24px;
+					height: 8.4rem;
+					overflow: hidden; // ẩn các nội dung khi kích thước lớn hơn chiều rộng khối bên ngoài
+					text-overflow: ellipsis; //thêm 3 dấu chấm ở cuối
+					-webkit-line-clamp: 4; // số dòng muốn hiển thị
+					-webkit-box-orient: vertical;
+					display: -webkit-box;
+				}
+				.viewFullProductDetails {
+					font-size: 1.4rem;
+					color: #19b5fe;
+				}
+			}
+			.cart {
+				display: flex;
+				height: $modalCartAreaHeight;
+				line-height: 3.5rem;
+				a {
+					text-align: center;
+					width: 120px;
+					height: $modalCartAreaHeight;
+					background-color: var(--primary-color);
+					color: #fff;
+					margin: 0 14px;
+					text-decoration: none;
+					font-size: 1.4rem;
+				}
+				.favorite {
+					text-align: center;
+					font-size: 2.5rem;
+					width: $modalCartAreaHeight;
+					background-color: #e91e63;
+					color: #fff;
+					padding-top: 2px;
+					cursor: pointer;
+				}
+			}
+			.shareArea {
+				h4 {
+					font-size: 1.4rem;
+					font-weight: 600;
+					opacity: 0.9;
+				}
+				.socials {
+					margin-left: -4px;
+					.socialIcon {
+						font-size: 1.4rem;
+						color: #888;
+					}
+					.socialIcon + .socialIcon {
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
 }
 
 // Animations
 @keyframes fadeIn {
-  from { opacity: 0 }
+	from {
+		opacity: 0;
+	}
 }
 
 @keyframes modalAnimation {
-  from { 
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 // Responsive
 @media (max-width: 739px) {
-  .addToCartModalContainer {
-    .overlay {
-      background-color: transparent;
-      z-index: 12;
-    }
-    .addToCartModal {
-      width: 95vw;
-      height: 95vh;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      .addToCartImgWrap {
-        .addToCartImg {
-          margin: 0;
-        }
-      }
-      .addToCartContent {
-        padding: 0;
-      }
-    }
-  }
+	.addToCartModalContainer {
+		.overlay {
+			background-color: transparent;
+			z-index: 12;
+		}
+		.addToCartModal {
+			width: 95vw;
+			height: 95vh;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
+			padding: 20px;
+			.addToCartImgWrap {
+				.addToCartImg {
+					margin: 0;
+				}
+			}
+			.addToCartContent {
+				padding: 0;
+			}
+		}
+	}
 }

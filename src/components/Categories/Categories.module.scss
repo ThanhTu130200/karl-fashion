@@ -65,6 +65,7 @@ $closeWidth: 50px;
             margin-left: 20px;
             cursor: pointer;
             .headerCategoryItemName {
+                font-size: 1.3rem;
                 display: block;
                 cursor: pointer;
             }
@@ -144,16 +145,4 @@ $closeWidth: 50px;
     to {
         opacity: 1;
     }
-}
-
-
-// Responsive   
-
-// Mobile
-@media (max-width: 739px) {
-        .headerCategory{
-            .headerCategoryIcon {
-                padding: 12px;
-            }
-        }
 }

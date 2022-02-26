@@ -29,7 +29,7 @@ function Categories() {
                 <div className={styles.headerCategoryClose} onClick={handleHide}>
                     <i className={`${styles.headerCategoryCloseIcon} ti-close`} />
                 </div>
-                {/* <h2 className={styles.headerCategoryHeader}>Categories</h2>
+                <h2 className={styles.headerCategoryHeader}>Categories</h2>
                 <div className={styles.headerCategoryLists}>
                     {categories.map(category => (
                         <div
@@ -57,7 +57,7 @@ function Categories() {
                             </ul>
                         </div>
                     ))}
-                </div> */}
+                </div>
             </nav>
             <div className={styles.headerCategoryOverlay} onClick={handleHide}></div>
         </>

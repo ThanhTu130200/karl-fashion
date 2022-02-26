@@ -44,6 +44,9 @@ $suvHeaderLineHeight: 35px;
             color: #fff;
             font-size: 1.4rem;
             font-weight: 600;
+            i {
+                margin-right: 4px;
+            }
         }
         .phoneNumberLink:hover {
             background-color: #3a3a3a;
@@ -91,7 +94,9 @@ $suvHeaderLineHeight: 35px;
                 line-height: $suvHeaderLineHeight;
                 .mainMenuLink {
                     height: 35px;
+                    color: #3a3a3a;
                     position: relative;
+                    text-decoration: none;
                     cursor: pointer;
                     .showMoreIcon {
                         font-size: 1.2rem;

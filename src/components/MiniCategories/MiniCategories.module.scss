@@ -1,20 +1,7 @@
-$headerHeight: 150px;
+$miniHeight: 150px;
 $closeWidth: 50px;
 
-.headerCategoryOverlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-    animation: fadeIn .3s linear forwards;
-}
-.headerCategoryListsWrap {
-    position: fixed;
+.miniCategoryListsWrap {
     flex-direction: column;
     top: 0;
     left: 0;
@@ -24,56 +11,40 @@ $closeWidth: 50px;
     max-width: 100%;
     background-color: #fff;
     text-align: left;
-    padding-left: 20px;
+    padding: 0;
     overflow-y: scroll;
     overflow-x: hidden;
     direction: rtl;
     transition: .5s transform;
     z-index: 12;
-    .headerCategoryClose {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: calc($closeWidth + 10px);
-        height: $closeWidth;
-        line-height: $closeWidth;
-        font-size: 1.8rem;
-        text-align: center;
-        color: #fff;
-        background-color: #3a3a3a;
-        transition: .5s background-color;
-        cursor: pointer;
-        .headerCategoryCloseIcon {
-        }
-    }
-    .headerCategoryClose:hover {
+    .miniCategoryClose:hover {
         background-color: var(--primary-color);
     }
-    .headerCategoryHeader {
-        margin-top: $closeWidth;
+    .miniCategoryHeader {
         font-size: 1.6rem;
-        padding: 30px 0;
+        margin: 0;
     }
-    .headerCategoryLists {
+    .miniCategoryLists {
+        margin-top: 50px;
         font-weight: 400;
         list-style: none;
         padding: 0;
         line-height: 45px;
-        .headerCategoryItem {
+        .miniCategoryItem {
             display: block;
             position: relative;
             margin-left: 20px;
             cursor: pointer;
-            .headerCategoryItemName {
-                display: block;
+            .miniCategoryItemName {
+                font-size: 1.3rem;
+                display: inline-block;
                 cursor: pointer;
             }
             .arrowDown {
-                position: absolute;
-                right: 18px;
+                padding-left: 10px;
                 line-height: 4rem;
             }
-            .headerCategoryItemChildren {
+            .miniCategoryItemChildren {
                 margin: 0 0 10px 10px;
                 display: none;
                 opacity: 0;
@@ -81,11 +52,11 @@ $closeWidth: 50px;
                 padding: 0;
                 animation: turnInFromLeft .3s .1s 1 linear forwards;
                 cursor: default;
-                .headerCategoryItemChild {
+                .miniCategoryItemChild {
                     position: relative;
                     cursor: pointer;
                 }
-                .headerCategoryItemChild::before {
+                .miniCategoryItemChild::before {
                     width: 8px;
                     height: 8px;
                     border: 1px solid #000;
@@ -100,7 +71,7 @@ $closeWidth: 50px;
                 }
             }
         }
-        .headerCategoryItem::before {
+        .miniCategoryItem::before {
             width: 8px;
             height: 8px;
             border: 1px solid #000;
@@ -113,16 +84,16 @@ $closeWidth: 50px;
             top: 18px;
             left: 0;
         }
-        .active.headerCategoryItem::before {
+        .active.miniCategoryItem::before {
             border-color: var(--primary-color);
             background-color: var(--primary-color);
         }
     }
 }
-.headerCategoryListsWrap.active {
+.miniCategoryListsWrap.active {
     transform: translateX(0);
 }
-.headerCategoryListsWrap.active ~ .headerCategoryOverlay {
+.miniCategoryListsWrap.active ~ .miniCategoryOverlay {
     display: block;
 }
 
@@ -151,8 +122,8 @@ $closeWidth: 50px;
 
 // Mobile
 @media (max-width: 739px) {
-        .headerCategory{
-            .headerCategoryIcon {
+        .miniCategory{
+            .miniCategoryIcon {
                 padding: 12px;
             }
         }

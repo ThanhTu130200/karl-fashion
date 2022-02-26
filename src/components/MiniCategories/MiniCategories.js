@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react'
-import styles from './Categories.module.scss'
+import styles from './MiniCategories.module.scss'
 import categories from '../FakeAPI/FakeAPICategories'
 
-function Categories() {
+function MiniCategories() {
 
     const categoriesRef = useRef()
 
@@ -25,31 +25,28 @@ function Categories() {
 
     return (
         <>
-            <nav ref={categoriesRef} className={styles.headerCategoryListsWrap}>
-                <div className={styles.headerCategoryClose} onClick={handleHide}>
-                    <i className={`${styles.headerCategoryCloseIcon} ti-close`} />
-                </div>
-                {/* <h2 className={styles.headerCategoryHeader}>Categories</h2>
-                <div className={styles.headerCategoryLists}>
+            <nav ref={categoriesRef} className={styles.miniCategoryListsWrap + " " + styles.active}>
+                <h2 className={styles.miniCategoryHeader}>Categories</h2>
+                <div className={styles.miniCategoryLists}>
                     {categories.map(category => (
                         <div
                             key={category.id}
-                            className={`${styles.headerCategoryItem} item-${category.id} ${activeItems.includes(category.id) && styles.active
+                            className={`${styles.miniCategoryItem} item-${category.id} ${activeItems.includes(category.id) && styles.active
                                 }`}
                         >
                             <label
-                                className={styles.headerCategoryItemName}
+                                className={styles.miniCategoryItemName}
                                 onClick={() => handleActive(category.id)}
                             >
                                 {category.name}
                                 <i className={`${styles.arrowDown} ti-angle-down`}></i>
                             </label>
-                            <ul className={`${styles.headerCategoryItemChildren}  ${activeItems.includes(category.id) && 'd-block'
+                            <ul className={`${styles.miniCategoryItemChildren}  ${activeItems.includes(category.id) && 'd-block'
                                 }`}>
                                 {category.children.map((child, index) => (
                                     <li
                                         key={index}
-                                        className={`${styles.headerCategoryItemChild}`}
+                                        className={`${styles.miniCategoryItemChild}`}
                                     >
                                         {child}
                                     </li>
@@ -57,11 +54,10 @@ function Categories() {
                             </ul>
                         </div>
                     ))}
-                </div> */}
+                </div>
             </nav>
-            <div className={styles.headerCategoryOverlay} onClick={handleHide}></div>
         </>
     )
 }
 
-export default Categories
+export default MiniCategories

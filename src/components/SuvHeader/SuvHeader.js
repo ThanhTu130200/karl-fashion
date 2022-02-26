@@ -24,7 +24,7 @@ function SuvHeader() {
                 </div>
                 <div className={`${styles.mainMenu} col l-6 l-o-1 m-0 c-0`}>
                     {/* Add class `hot` to element Hot */}
-                    <div className={`${styles.mainMenuLink}`}>Home</div>
+                    <Link to="/" className={`${styles.mainMenuLink}`}>Home</Link>
                     <div className={`${styles.mainMenuLink} ${styles.mainMenuPagesLink}`}>
                         Pages
                         <i className={`${styles.showMoreIcon} ti-angle-down`}></i>

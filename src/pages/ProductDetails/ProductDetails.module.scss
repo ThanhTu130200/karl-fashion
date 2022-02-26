@@ -1,0 +1,265 @@
+$height: 100px;
+$selectMargin: 0 0 0 2px;
+$cartHeight: 35px;
+$marginB: 20px;
+$relatedHeight: 450px;
+
+.container {
+	padding: 60px 0 140px;
+	border-bottom: 2px solid #ebebeb;
+	.productDetails {
+		.productDetailsWrap {
+			padding-bottom: 100px;
+		}
+		.link {
+			font-size: 1.4rem;
+			margin: 0 0 20px;
+		}
+		.back {
+			position: relative;
+			display: flex;
+			font-size: 1.2rem;
+			padding: 4px 0;
+			cursor: pointer;
+			max-width: 100px;
+			margin-bottom: 50px;
+			line-height: 1.2rem;
+			p {
+				margin: 0;
+				left: 10px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			i {
+				font-size: 0.8rem;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+		.sliders {
+			position: relative;
+			margin: 0;
+			.img {
+				height: 80vh;
+				background: no-repeat center / cover;
+			}
+		}
+		.sliderSelects {
+			height: $height;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			ul {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				li {
+					height: $height;
+					flex: 1;
+					margin: 0;
+				}
+				li + li {
+					margin: $selectMargin;
+				}
+				li button::before {
+					display: none;
+				}
+			}
+			.imgSelect {
+				height: $height;
+				flex: 1;
+				background: no-repeat center / cover;
+				margin: 0;
+			}
+			.imgSelect + .imgSelect {
+				margin: $selectMargin;
+			}
+		}
+	}
+	.content {
+		h1 {
+			margin: 0 0 $marginB;
+			font-size: 2.4rem;
+			font-weight: 500;
+		}
+		h2 {
+			margin: 0 0 $marginB;
+			font-size: 2.4rem;
+		}
+		.availability {
+			display: flex;
+			.availabilityTag {
+				margin: 0 4px $marginB;
+				font-size: 1.2rem;
+				color: #868686;
+			}
+			.availabilityValue {
+				margin: 0 0 $marginB;
+				font-size: 1.2rem;
+			}
+		}
+		.rating {
+			font-size: 1.8rem;
+			color: #ff9800;
+			margin: 0 0 $marginB;
+		}
+		.sizeArea {
+			h3 {
+				text-transform: uppercase;
+				font-size: 1.4rem;
+				margin: 0;
+				margin-bottom: 10px;
+			}
+			.sizes {
+				display: flex;
+				margin: 0 0 $marginB;
+				.size {
+					width: $cartHeight;
+					height: $cartHeight;
+					line-height: $cartHeight;
+					text-align: center;
+					font-size: 1.2rem;
+					margin: 0;
+					cursor: pointer;
+					transition: all 0.35s linear;
+					border: 2px solid #3a3a3a;
+					margin: 0 2px;
+				}
+				.size.active,
+				.size:hover {
+					background-color: var(--primary-color);
+					color: #fff;
+				}
+			}
+		}
+		.cart {
+			display: flex;
+			height: $cartHeight;
+			line-height: 3.5rem;
+			margin: 0 0 50px;
+			.quantity {
+				input {
+					text-align: center;
+					height: $cartHeight;
+					width: 40px;
+					border: 1px solid #f6f6f6;
+				}
+				button {
+					height: 100%;
+					min-width: 25px;
+					border: 1px solid #f6f6f6;
+					background-color: transparent;
+					color: #888;
+					font-size: 1.8rem;
+					line-height: 1.8rem;
+					font-weight: 600;
+					cursor: pointer;
+				}
+			}
+			.addToCart {
+				text-align: center;
+				width: 120px;
+				height: $cartHeight;
+				background-color: var(--primary-color);
+				color: #fff;
+				margin: 0 14px;
+				text-decoration: none;
+				font-size: 1.4rem;
+				cursor: pointer;
+			}
+			.favorite {
+				text-align: center;
+				font-size: 2.5rem;
+				width: $cartHeight;
+				background-color: #e91e63;
+				color: #fff;
+				padding-top: 2px;
+				cursor: pointer;
+			}
+		}
+		.line {
+			border-bottom: 2px solid #ebebeb;
+		}
+		.info {
+			margin-top: $marginB;
+			h1 {
+				text-transform: uppercase;
+				font-size: 1.4rem;
+				font-weight: 600;
+			}
+			p {
+				margin: 0;
+				font-size: 1.4rem;
+				line-height: 1.5;
+			}
+		}
+	}
+	.related {
+		height: calc($relatedHeight + 200px);
+		.relatedHeader {
+			text-align: center;
+			font-size: 4.8rem;
+			line-height: 4.8rem;
+			text-transform: uppercase;
+			margin: 0 0 35px;
+		}
+		.slidersRelated {
+			height: 100%;
+			.img {
+				display: block;
+				height: $relatedHeight;
+				background: no-repeat center / cover;
+				cursor: pointer;
+			}
+			.img:hover {
+				transform: scale(1.01);
+				filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+				transition: 0.2s all linear;
+			}
+			.priceArea {
+				display: flex;
+				margin: 24px 0 14px;
+				align-items: flex-end;
+				.price {
+					margin: 0;
+					font-size: 2.4rem;
+					line-height: 2.4rem;
+					color: #3a3a3a;
+					font-weight: 700;
+				}
+				.oldPrice {
+					margin: 0;
+					font-size: 1.6rem;
+					font-weight: 1.6rem;
+					color: #9f9f9f;
+					text-decoration: line-through;
+					padding-bottom: 2px;
+					padding-left: 10px;
+				}
+			}
+			.name {
+				margin: 0;
+				font-size: 1.8rem;
+				font-weight: 600;
+				color: #3a3a3a;
+			}
+			.addToCart {
+				display: block;
+				text-decoration: none;
+				color: var(--primary-color);
+				font-size: 1.2rem;
+				text-transform: uppercase;
+				font-weight: 700;
+				margin-top: 50px;
+				cursor: pointer;
+			}
+		}
+	}
+}

@@ -1,0 +1,149 @@
+.container {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+.form {
+	width: 100%;
+	min-height: 100px;
+	padding: 40px 0 0;
+	text-align: center;
+	background: #fff;
+	border-radius: 2px;
+	margin: 0;
+	align-self: center;
+	.heading {
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		text-align: left;
+		margin: 0 0 8px;
+	}
+	.desc {
+		text-align: left;
+		color: #7a7a7a;
+		font-size: 1.2rem;
+		line-height: 2.4rem;
+		margin-top: 16px;
+		font-weight: 300;
+		margin: 0 0 35px;
+	}
+}
+
+.formGroup {
+	display: flex;
+	margin-bottom: 16px;
+	flex-direction: column;
+	.name {
+		justify-content: space-between;
+		margin-bottom: -10px;
+		.formGroup {
+			display: flex;
+			flex-direction: column !important;
+			width: 45%;
+			margin: 0;
+			.formLabel {
+				width: 100%;
+			}
+			.formControl {
+				width: 100%;
+				margin: 0;
+			}
+		}
+	}
+}
+
+.formGroup.horizontal div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.2rem;
+	padding-bottom: 6px;
+}
+
+.formGroup.horizontal div input {
+	margin-right: 8px;
+	margin-top: -1px;
+}
+
+.formGroup.horizontal .form-message {
+	display: block;
+}
+
+.formLabel,
+.formMessage {
+	text-align: left;
+}
+
+.formLabel {
+	font-weight: 400;
+	padding-bottom: 6px;
+	line-height: 1.8rem;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+
+.formControl {
+	height: 52px;
+	padding: 8px 12px;
+	border: none;
+	border-radius: none;
+	outline: none;
+	color: #212529;
+	background-color: #f4f2f8;
+	font-size: 1.4rem;
+	transition: all 0.25s linear;
+}
+
+.formControl:focus {
+	box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+.formGroup.invalid .form-control {
+	border-color: #f33a58;
+}
+
+.formGroup.invalid .form-message {
+	color: #f33a58;
+}
+
+.formMessage {
+	font-size: 1.2rem;
+	line-height: 1.6rem;
+	padding: 4px 0 0;
+}
+
+.formSubmit:hover {
+	background-color: #1ac7b6;
+}
+
+.spacer {
+	margin-top: 36px;
+}
+
+.more {
+	text-align: left;
+	div {
+		display: flex;
+		align-items: center;
+		font-size: 1.2rem;
+		label {
+			text-transform: uppercase;
+		}
+		.formControl {
+			height: 40px;
+			margin: 0 6px 0 0;
+		}
+		.formControl:focus {
+			box-shadow: none;
+		}
+	}
+}
+
+// Responsive
+// Mobile
+@media (max-width: 739px) {
+	.container {
+		padding: 0 40px;
+	}
+}
